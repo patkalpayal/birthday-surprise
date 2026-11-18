@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Little World of Us ❤️</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Trebuchet MS', sans-serif;
+  background: #fff4f7;
+  color: #75465b;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+section {
+  min-height: 100vh;
+  padding: 65px 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.card {
+  background: rgba(255,255,255,.94);
+  border: 2px solid #ffdae7;
+  border-radius: 28px;
+  padding: 35px 25px;
+  width: 100%;
+  max-width: 680px;
+  box-shadow: 0 12px 35px #e9a6c044;
+}
+
+h1 {
+  color: #d45e8b;
+  font-size: clamp(30px, 6vw, 44px);
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: #d77d9e;
+  margin: 18px 0;
+}
+
+p {
+  font-size: 17px;
+  line-height: 1.9;
+}
+
+button {
+  background: #e78eae;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 14px 25px;
+  margin: 12px 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+button:hover {
+  background: #ca648b;
+  transform: scale(1.06);
+}
+
+.emoji {
+  font-size: 75px;
+  margin: 20px;
+}
+
+.small {
+  font-size: 14px;
+  color: #bd7892;
+}
+
+.floating {
+  animation: float 2.5s infinite ease-in-out;
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes pulse {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.12); }
+}
+
+.heart {
+  color: #ed8eae;
+  font-size: 24px;
+  animation: float 3s infinite;
+}
+
+.reasons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.reason {
+  background: #fff0f5;
+  border: 1px solid #ffd5e3;
+  border-radius: 18px;
+  padding: 18px 10px;
+  line-height: 1.7;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin: 25px 0;
+}
+
+.photo {
+  background: #ffe8f0;
+  padding: 10px 10px 22px;
+  box-shadow: 0 5px 15px #d99ab244;
+  transform: rotate(-3deg);
+}
+
+.photo:nth-child(even) {
+  transform: rotate(3deg);
+}
+
+.photo img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 5px;
+  display: block;
+}
+
+.photo p {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.video-memory {
+  background: #ffe8f0;
+  padding: 12px;
+  margin: 30px 0;
+  border-radius: 18px;
+  box-shadow: 0 5px 15px #d99ab244;
+}
+
+.video-memory video {
+  width: 100%;
+  max-height: 420px;
+  display: block;
+  border-radius: 12px;
+  background: #000;
+}
+
+.video-memory p {
+  font-size: 15px;
+  margin-top: 12px;
+}
+
+#letter {
+  text-align: left;
+  white-space: pre-line;
+  line-height: 2;
+  font-size: 16px;
+}
+
+#cake {
+  font-size: 105px;
+  margin: 25px;
+  animation: pulse 2s infinite;
+}
+
+#message {
+  color: #d45e8b;
+  font-weight: bold;
+  min-height: 35px;
+}
+
+.hidden { display: none; }
+
+.gift {
+  background: #fff0f5;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 15px 0;
+}
+
+footer {
+  padding: 30px;
+  background: #ffe0eb;
+  color: #bd6487;
+}
+
+#hearts {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.heart-float {
+  position: absolute;
+  bottom: -30px;
+  animation: rise 5s linear forwards;
+}
+
+@keyframes rise {
+  to {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@media(max-width:450px) {
+  .reasons { grid-template-columns: 1fr; }
+  .photo img { height: 140px; }
+  .card { padding: 28px 17px; }
+}
+</style>
+</head>
+
+<body>
+
+<div id="hearts"></div>
+
+<!-- 1. WELCOME -->
+<section id="home">
+<div class="card">
+
+<div class="emoji floating">💌🎀</div>
+
+<p class="small">A LITTLE SURPRISE FOR SOMEONE SPECIAL</p>
+
+<h1>Hey, Athrva! ❤️</h1>
+
+<h2>My Pillu, My Bal, My Aaho!</h2>
+
+<p>
+Out of all the people in this world,
+I'm so lucky that I found YOU.
+<br><br>
+Today, I don't just want to wish you
+a happy birthday.
+<br>
+I want to remind you how special
+you are to me.
+</p>
+
+<div class="heart">♡ ♡ ♡</div>
+
+<button onclick="go('cakeSection')">
+Let's Begin, My Love 💗
+</button>
+
+</div>
+</section>
+
+<!-- 2. CAKE -->
+<section id="cakeSection">
+<div class="card">
+
+<div class="emoji">🎀</div>
+
+<h1>It's Your Birthday!</h1>
+
+<h2>Make a Wish, Pillu! 🎂</h2>
+
+<div id="cake">🎂</div>
+
+<p>
+Close your eyes, make your sweetest wish
+and blow your candles!
+</p>
+
+<button onclick="blowCake()">
+Blow Your Candles 🕯️
+</button>
+
+<p id="cakeMessage"></p>
+
+<button onclick="go('catSection')">
+Next Surprise 💕
+</button>
+
+</div>
+</section>
+
+<!-- 3. CUTE CAT -->
+<section id="catSection">
+<div class="card">
+
+<div class="emoji floating">🐱💗</div>
+
+<h1>Hey, Birthday Boy!</h1>
+
+<h2>One Little Question...</h2>
+
+<p>
+Aaho, do you accept all my love,
+hugs, kisses and unlimited care?
+</p>
+
+<button onclick="yesAnswer()">
+YES, OF COURSE! ❤️
+</button>
+
+<button onclick="noAnswer()">
+NO 🙈
+</button>
+
+<p id="answerMessage"></p>
+
+<button id="letterButton"
+class="hidden" onclick="go('storySection')">
+Open Something Special 💌
+</button>
+
+</div>
+</section>
+
+<!-- 4. OUR STORY -->
+<section id="storySection">
+<div class="card">
+
+<div class="emoji">🌷</div>
+
+<h1>Our Little Story</h1>
+
+<h2>Do You Remember Our First Meeting?</h2>
+
+<p>
+I don't know if you realise how special
+that first meeting is to me.
+<br><br>
+It was the beginning of so many beautiful
+moments that I will always keep close
+to my heart.
+<br><br>
+And those little moments we spend together...
+I wish I could pause time sometimes
+and live them a little longer.
+<br><br>
+Because even the simplest moments
+become special when I'm with you.
+</p>
+
+<div class="heart">♡</div>
+
+<button onclick="go('reasonsSection')">
+Why You Are So Special 💗
+</button>
+
+</div>
+</section>
+
+<!-- 5. REASONS -->
+<section id="reasonsSection">
+<div class="card">
+
+<h1>6 Reasons Why I Love You</h1>
+
+<p>And honestly, I could write a thousand more! 🥹</p>
+
+<div class="reasons">
+
+<div class="reason">
+<div>❤️</div>
+<strong>Your Care</strong>
+<p>You always make me feel loved and cared for.</p>
+</div>
+
+<div class="reason">
+<div>🥹</div>
+<strong>You Understand Me</strong>
+<p>You understand my feelings even when I cannot explain them.</p>
+</div>
+
+<div class="reason">
+<div>🫶</div>
+<strong>You Stay</strong>
+<p>You stand beside me in every situation.</p>
+</div>
+
+<div class="reason">
+<div>🏡</div>
+<strong>My Safe Place</strong>
+<p>With you, I feel safe enough to be myself.</p>
+</div>
+
+<div class="reason">
+<div>😊</div>
+<strong>Your Smile</strong>
+<p>Your happiness makes my heart happy.</p>
+</div>
+
+<div class="reason">
+<div>💗</div>
+<strong>Simply YOU</strong>
+<p>I love you for being exactly who you are.</p>
+</div>
+
+</div>
+
+<button onclick="go('letterSection')">
+A Letter From My Heart 💌
+</button>
+
+</div>
+</section>
+
+<!-- 6. LOVE LETTER -->
+<section id="letterSection">
+<div class="card">
+
+<div class="emoji">💌🌹</div>
+
+<p class="small">OPEN THIS WHEN YOU MISS ME</p>
+
+<h1>To My Dearest Athrva</h1>
+
+<h2>My Pillu, ❤️</h2>
+
+<p id="letter">
+
+Happy Birthday, माझ्या बाळा! ❤️
+
+आज तुझा birthday आहे, पण खरं सांगू?
+आज मला तुला फक्त wishes द्यायच्या नाहीयेत,
+तर माझ्या मनात तुझ्यासाठी जे काही आहे
+ते थोडंसं सांगायचं आहे.
+
+आपली पहिली भेट, आपण एकत्र घालवलेला वेळ,
+आपल्या छोट्या छोट्या गोष्टी...
+या सगळ्या आठवणी माझ्यासाठी खूप precious आहेत.
+
+तू माझी ज्या पद्धतीने काळजी घेतोस,
+मला समजून घेतोस आणि प्रत्येक situation मध्ये
+माझ्यासोबत उभा राहतोस ना,
+ते माझ्यासाठी खूप मोठं आहे.
+
+तुझ्यासोबत असताना मला एक वेगळीच
+शांतता आणि सुरक्षितता जाणवते.
+मला माझं मन मोकळं करता येतं,
+स्वतःसारखं राहता येतं.
+आणि ही भावना माझ्यासाठी खूप खास आहे.
+
+कधी कधी मला शब्दांत सांगता येत नाही
+की तू माझ्यासाठी किती महत्त्वाचा आहेस.
+पण एवढं नक्की सांगू शकते की
+तुझं माझ्या आयुष्यात असणं
+ही माझ्यासाठी खूप सुंदर गोष्ट आहे.
+
+मला तुझ्यासोबत अजून खूप आठवणी बनवायच्या आहेत.
+खूप हसायचंय, फिरायचंय, छोट्या छोट्या गोष्टी
+celebrate करायच्या आहेत आणि आयुष्यातल्या
+प्रत्येक चांगल्या-वाईट क्षणात एकमेकांची साथ द्यायची आहे.
+
+आणि Aaho, कधीही स्वतःला एकटं समजू नकोस.
+तुझं ऐकणारी, तुझी काळजी करणारी,
+तुझ्या आनंदात आनंदी होणारी
+आणि तुझ्या दुःखात तुझ्यासोबत उभी राहणारी
+एक व्यक्ती नेहमी आहे.
+
+ती म्हणजे मी!
+
+तू असाच हसत राहा.
+तुझी प्रत्येक स्वप्नं पूर्ण होवोत.
+तुला आयुष्यात भरभरून यश आणि आनंद मिळो.
+
+I love you, माझ्या बाळा.
+More than these words can ever explain.
+
+Happy Birthday once again,
+MY PILLLLUUU! ❤️
+
+Forever yours. 💗
+
+</p>
+
+<button onclick="go('memorySection')">
+Let's See Our Memories 📸
+</button>
+
+</div>
+</section>
+
+<!-- 7. PHOTOS AND VIDEO -->
+<section id="memorySection">
+<div class="card">
+
+<div class="emoji">📸💗</div>
+
+<h1>Our Beautiful Memories</h1>
+
+<p>
+Every picture has a story.
+And every moment with you
+has a special place in my heart.
+</p>
+
+<div class="photo-grid">
+
+<div class="photo">
+<img src="firstmeeting.jpg" alt="Our First Meeting">
+<p>Our First Meeting 💗</p>
+</div>
+
+<div class="photo">
+<img src="memory.jpg" alt="Our Beautiful Memory">
+<p>My Favourite Moment 🥹</p>
+</div>
+
+<div class="photo">
+<img src="athrva.jpg" alt="My Pillu">
+<p>My Favourite Person ❤️</p>
+</div>
+
+</div>
+
+<h2>Our Most Beautiful Time Together 🥹</h2>
+
+<p>
+Some moments are too special
+to be captured in just one picture.
+❤️
+</p>
+
+<div class="video-memory">
+
+<video controls preload="metadata">
+<source src="maxtimespend.mp4" type="video/mp4">
+Your browser does not support this video.
+</video>
+
+<p>
+Our Time Together ❤️
+<br>
+My Favourite Memories With You 🫶
+</p>
+
+</div>
+
+<p class="small">
+Every memory with you is my favourite. ♡
+</p>
+
+<button onclick="go('giftSection')">
+Your Last Surprise 🎁
+</button>
+
+</div>
+</section>
+
+<!-- 8. GIFTS -->
+<section id="giftSection">
+<div class="card">
+
+<div class="emoji floating">🎁🎀</div>
+
+<h1>Three Little Gifts For You</h1>
+
+<p>Choose any gift, my love! ❤️</p>
+
+<div class="gift">
+<h2>🎁 Gift 1 – A Hug</h2>
+<button onclick="showGift(1)">Open Gift</button>
+<p id="gift1" class="hidden">
+A very tight hug from me!
+Imagine I'm hugging you right now. 🫂
+</p>
+</div>
+
+<div class="gift">
+<h2>🎁 Gift 2 – A Promise</h2>
+<button onclick="showGift(2)">Open Gift</button>
+<p id="gift2" class="hidden">
+I promise to keep making beautiful
+memories with you. 💗
+</p>
+</div>
+
+<div class="gift">
+<h2>🎁 Gift 3 – My Heart</h2>
+<button onclick="showGift(3)">Open Gift</button>
+<p id="gift3" class="hidden">
+You already have the most special
+place in my heart. ❤️
+</p>
+</div>
+
+<button onclick="go('finalSection')">
+One Last Thing, Aaho 💌
+</button>
+
+</div>
+</section>
+
+<!-- 9. FINAL -->
+<section id="finalSection">
+<div class="card">
+
+<div class="emoji floating">💐💗🎂</div>
+
+<h1>Happy Birthday, My Pillu!</h1>
+
+<h2>Athrva, You Are Loved. ❤️</h2>
+
+<p>
+If I could give you one thing in life,
+I would give you the ability to see yourself
+through my eyes.
+<br><br>
+Only then would you realise
+how special you truly are to me.
+<br><br>
+Thank you for being my person,
+my comfort and my safe place.
+<br><br>
+No matter how many birthdays come,
+I hope I get to celebrate
+many more of them with you.
+</p>
+
+<div class="emoji">❤️</div>
+
+<h2>I LOVE YOU, AAHO!</h2>
+
+<p>With all my love, forever your girl. 💗</p>
+
+<button onclick="go('home')">
+Read It All Again ↻
+</button>
+
+</div>
+</section>
+
+<footer>
+Made with endless love, only for Athrva. ♡
+</footer>
+
+<script>
+
+function go(id) {
+  document.getElementById(id).scrollIntoView({
+    behavior: "smooth"
+  });
+}
+
+function makeHearts() {
+  const container = document.getElementById("hearts");
+  const heart = document.createElement("span");
+
+  heart.className = "heart-float";
+  heart.innerHTML = ["💗","💕","♡","💖"][
+    Math.floor(Math.random()*4)
+  ];
+
+  heart.style.left = Math.random()*100 + "%";
+  heart.style.fontSize = (15+Math.random()*20)+"px";
+
+  container.appendChild(heart);
+
+  setTimeout(() => heart.remove(), 5000);
+}
+
+setInterval(makeHearts, 700);
+
+function blowCake() {
+  document.getElementById("cake").innerHTML = "🍰";
+
+  document.getElementById("cakeMessage").innerHTML =
+    "Your candles are blown! May all your wishes come true, my love! 🎉❤️";
+}
+
+function yesAnswer() {
+  document.getElementById("answerMessage").innerHTML =
+    "Yayyyyy! You are officially stuck with unlimited love from me! 🥹❤️";
+
+  document.getElementById("letterButton")
+    .classList.remove("hidden");
+}
+
+function noAnswer() {
+  document.getElementById("answerMessage").innerHTML =
+    "Wrong answer, Aaho! Try again. You cannot escape my love! 😂💗";
+}
+
+function showGift(number) {
+  document.getElementById("gift"+number)
+    .classList.remove("hidden");
+}
+
+</script>
+
+</body>
+</html>
